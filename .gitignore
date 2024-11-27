@@ -1,0 +1,11 @@
+# ignore .pth files
+*.pth
+# ignore data files
+*.txt
+*.json
+*.csv
+
+# ignore compiled files
+*.pyc
+*.pyo
+*.pyd
