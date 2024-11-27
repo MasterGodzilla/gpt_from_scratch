@@ -155,6 +155,14 @@ for i in range(total_iters):
         torch.save(model.state_dict(), f"model_{i}.pth")
 
 torch.save(model.state_dict(), f"model_{i}.pth")
+
+# save losses to logs folder
+# time stamp
+timestamp = time.strftime("%Y%m%d_%H%M%S")
+with open(f'logs/losses_{timestamp}.txt', 'w') as f:
+    for loss in losses:
+        f.write(f"iter {i}: loss {loss:.4f}\n")
+
 # Plot loss and learning rate
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8))
 
